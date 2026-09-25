@@ -8,7 +8,7 @@ function drawOnScreen(colour, message){
    let line=(" ".repeat(left)+message).padEnd(cols);
    let screen=colours.clear+colour+colours.white;
    for (let i=0; i<rows; ++i){
-      if(i==Math.floor(rows/w)){
+      if(i==Math.floor(rows/2)){
          screen+=line;
       }
       else{
@@ -25,7 +25,7 @@ async function celebrate(score){
    let flashing_colours=[colours.blue, colours.garnet];
    process.stdout.write("\x07");
    for (let i=0; i<10; ++i){
-      drawOnScreen(flashcolours[i%2], message);
+      drawOnScreen(flashing_colours[i%2], message);
       await wait(400);
    }
    process.stdout.write(colours.reset+colours.clear)
