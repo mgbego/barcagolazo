@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 let config=require("./config");
 let api=require("./api");
 let match=require("./read_match_data");

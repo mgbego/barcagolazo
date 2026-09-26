@@ -1,7 +1,7 @@
 {
   "name": "golazo",
   "version": "1.0.0",
-  "description": "",
+  "description": "A CLI tool that flashes the Blaugrana colours in your terminal when Barça scores a goal",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -13,11 +13,15 @@
     "url": "git+https://github.com/mgbego/golazo.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "mgbego",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
     "url": "https://github.com/mgbego/golazo/issues"
+  },
+
+  "bin":{
+      "barcagolazo": "index.js"
   },
 
   "homepage": "https://github.com/mgbego/golazo#readme"
