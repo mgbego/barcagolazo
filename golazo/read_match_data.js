@@ -32,7 +32,7 @@ function nextMatch(matches){
    upcomingmatch.sort(function(firstMatch, secondMatch){
       return new Date(firstMatch['utcDate'])-new Date(secondMatch['utcDate']);
    });
-   return upcoming[0]
+   return upcomingmatch[0]
 }
 
 module.exports={barcagoals, scoreAnnouncement, matchOnNow, nextMatch}

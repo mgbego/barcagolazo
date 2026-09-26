@@ -17,15 +17,15 @@ function goalComparison(liveMatch){
    let prev_goal=seen[liveMatch['id']];
    seen[liveMatch['id']]=goals;
    if(prev_goal===undefined){
-      printTime("match is live: "+match.scoreline(liveMatch));
+      printTime("match is live: "+match.scoreAnnouncement(liveMatch));
    }
    else if(goals>prev_goal){
-      return celebrate(match.scoreline(liveMatch)).then(function(){
-         printTime("GOAL! "+match.scoreline(liveMatch));
+      return celebrate(match.scoreAnnouncement(liveMatch)).then(function(){
+         printTime("GOAL! "+match.scoreAnnouncement(liveMatch));
       });
    }
    else if(goals<prev_goal){
-      printTime("goal taken back (VAR?): "+match.scoreline(liveMatch));
+      printTime("goal taken back (VAR?): "+match.scoreAnnouncement(liveMatch));
    }
    return Promise.resolve();
 }
@@ -50,13 +50,13 @@ function nextCheck(nextMatch){
 function api_check(){
    api.getmatches()
       .then(function(matches){
-         let liveMatch=match.findlive(matches);
+         let liveMatch=match.matchOnNow(matches);
          if(liveMatch){
             return goalComparison(liveMatch).then(function(){
                return config.livewait;
             });
          }
-         return nextCheck(match.findnext(matches));
+         return nextCheck(match.nextMatch(matches));
       })
       .catch(function(err){
          printTime("[ERROR]: "+err.message+", trying again in a minute");

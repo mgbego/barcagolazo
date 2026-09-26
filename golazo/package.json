@@ -1,6 +1,6 @@
 {
   "name": "barcagolazo",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A CLI tool that flashes the Blaugrana colours in your terminal when Barça scores a goal",
   "main": "index.js",
   "scripts": {
