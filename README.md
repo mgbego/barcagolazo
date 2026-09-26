@@ -40,12 +40,12 @@ The key is read from the `FOOTBALL_DATA_KEY` environment variable, so it never e
 **Mac/Linux**
 
 ```bash
-export FOOTBALL_DATA_KEY= yourkey
+export FOOTBALL_DATA_KEY=yourkey
 ```
 **Windows**
 
 ```powershell
-$env:FOOTBALL_DATA_KEY= "yourkey"
+$env:FOOTBALL_DATA_KEY="yourkey"
 ```
 This lasts until you close the terminal. 
 
