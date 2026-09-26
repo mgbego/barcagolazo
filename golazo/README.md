@@ -56,7 +56,7 @@ On Mac, add the `export` line to your `~/.zshrc` if you want to keep it permanen
 Start watching:
 
 ```bash
-golazo
+barcagolazo
 ```
 
 Leave it running in a terminal window. It prints the next Barça match, checks the score every 30 seconds during the game, and celebrates when Barça scores. 
@@ -65,7 +65,7 @@ To stop, press `Ctrl+C`.
 If you simply want to preview the celebration, without having to wait for an actual goal during a match:
 
 ```bash
-golazo --test
+barcagolazo --test
 ```
 
 ## How `golazo` works
