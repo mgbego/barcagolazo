@@ -1,6 +1,6 @@
 # GOLAZOOOOO!!! 
 
-`golazo` watches FC Barcelona's matches and when they score, flashes your whole terminal in the Blaugrana and shows the live score.
+`barcagolazo` watches FC Barcelona's matches and when they score, flashes your whole terminal in the Blaugrana and shows the live score.
 
 ```
      ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -56,7 +56,7 @@ On Mac, add the `export` line to your `~/.zshrc` if you want to keep it permanen
 Start watching:
 
 ```bash
-golazo
+barcagolazo
 ```
 
 Leave it running in a terminal window. It prints the next Barça match, checks the score every 30 seconds during the game, and celebrates when Barça scores. 
@@ -65,10 +65,10 @@ To stop, press `Ctrl+C`.
 If you simply want to preview the celebration, without having to wait for an actual goal during a match:
 
 ```bash
-golazo --test
+barcagolazo --test
 ```
 
-## How `golazo` works
+## How `barcagolazo` works
 
 - When no match is close, it checks once an hour.
 - When a match is coming up, it checks every 10 minutes until kickoff.
