@@ -1,0 +1,26 @@
+{
+  "name": "golazo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node index.js --test"
+  },
+  
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mgbego/golazo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/mgbego/golazo/issues"
+  },
+
+  "homepage": "https://github.com/mgbego/golazo#readme"
+  
+  
+}
