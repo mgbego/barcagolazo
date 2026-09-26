@@ -78,7 +78,7 @@ golazo --test
 ## Good to know
 
 - **Not every competition is covered.** Alerts only come for La Liga and the Champions League, but not Copa del Rey matches.
-- **The celebration alerts do not arrive exactly in real time and there is a slight delay.**
+- **The celebration alerts do not arrive exactly in real time as there is a slight delay.**
 
 ## Credits
 
