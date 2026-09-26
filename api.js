@@ -1,7 +1,7 @@
 const config=require("./config");
 
 function formatDate(date){
-   return date.toISOStringg().slice(0,10);
+   return date.toISOString().slice(0,10);
 }
 
 function pieceurl(){
