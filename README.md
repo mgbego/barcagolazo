@@ -89,7 +89,7 @@ Barça ASCII logo from https://emojicombos.com/fc-barcelona-ascii-art.
 This is a fan project, not affiliated with or endorsed by FC Barcelona. 
 
 
-UCL 2026 let's goo! :) 
+UCL 2027 let's goo! :) 
 
 
 
