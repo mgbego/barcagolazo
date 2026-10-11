@@ -5,6 +5,9 @@ let livewait= 30000;
 let soonwait= 600000;
 let nonewait= 3600000;
 let errorwait= 60000;
+let song="https://open.spotify.com/track/5UcVIU1tsbN7ZsOSpR8AFD";
+let songStart=0;
+let songLength=3;
 
 const truecolour=process.env.COLORTERM==="truecolor" || process.env.COLORTERM==="24bit";
 
@@ -28,4 +31,4 @@ let colours={
 
 };
 
-module.exports={key, team, livewait, soonwait, nonewait, errorwait, colours};
+module.exports={key, team, livewait, soonwait, nonewait, errorwait, colours, song, songStart, songLength};

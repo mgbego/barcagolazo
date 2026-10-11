@@ -1,5 +1,8 @@
 let colours= require("./config").colours;
 let {barcalogo}= require("./logo");
+let config=require("./config");
+let {startSong}=require("./song");
+
 
 function makeLogo(score){
    return barcalogo.concat(["", "GOLAZOOOOO!!!   " +score]);
@@ -23,12 +26,24 @@ function drawOnScreen(colour, picture){
 async function celebrate(score){
    let picture=makeLogo(score);
    let flashing_colours=[colours.blue, colours.garnet];
-   process.stdout.write("\x07");
-   for (let i=0; i<10; ++i){
+
+   let stopSong=await startSong(config.song, config.songStart); //wait until the song is really playing
+   let flashes=Math.round(config.songLength*1000/400); //flash for as long as the song plays
+
+   for(let i=0; i<flashes; ++i){
       drawOnScreen(flashing_colours[i%2], picture);
       await wait(400);
    }
-   process.stdout.write(colours.reset+colours.clear)
+   process.stdout.write(colours.reset+colours.clear);
+
+   if(stopSong){
+      try{
+         await stopSong();
+      }
+      catch(err){
+         //spotify was closed during the celebration: nothing to stop
+      }
+   }
 }
 
 function wait(waittime){
