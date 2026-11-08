@@ -1,7 +1,9 @@
 let config= require("./config");
 
+//check
 function barcagoals(match){
    let goals;
+   //if barca
    if(match['homeTeam']['id']===config.team){
       goals=match['score']['fullTime']['home'];
    }

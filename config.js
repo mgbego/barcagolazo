@@ -1,5 +1,6 @@
 let key= process.env.FOOTBALL_DATA_KEY;
 let team=81;
+//barcas id 
 
 let livewait= 30000;
 let soonwait= 600000;

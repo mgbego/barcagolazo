@@ -6,7 +6,8 @@ let celebrate=require("./celebration_effect").celebrate;
 
 
 let seen={};
-let lastPrinted=null;
+let lastScore={};
+let lastPrinted= null;
 
 function printTime(message){
    console.log("["+new Date().toLocaleTimeString()+"] "+message);
@@ -15,22 +16,31 @@ function printTime(message){
 function goalComparison(liveMatch){
    let goals=match.barcagoals(liveMatch);
    let prev_goal=seen[liveMatch['id']];
-   seen[liveMatch['id']]=goals;
+   let score= match.scoreAnnouncement(liveMatch);
+   let prev_score= lastScore[liveMatch['id']];
+   seen[liveMatch['id']]= goals;
+   lastScore[liveMatch['id']]=score;
+
    if(prev_goal===undefined){
-      printTime("match is live: "+match.scoreAnnouncement(liveMatch));
+      printTime("match is live: "+score);
    }
+
    else if(goals>prev_goal){
-      return celebrate(match.scoreAnnouncement(liveMatch)).then(function(){
-         printTime("GOAL! "+match.scoreAnnouncement(liveMatch));
+      return celebrate(score).then(function(){
+         printTime("GOAL! "+score);
       });
    }
    else if(goals<prev_goal){
-      printTime("goal taken back (VAR?): "+match.scoreAnnouncement(liveMatch));
+      printTime("goal taken back (VAR?): "+score);
+   }
+
+   else if (score!==prev_score){
+      printTime("score update: "+score); //other team scored
    }
    return Promise.resolve();
 }
 
-//no match live right now find next (only relevant for UCL I guess)
+//no match live right now find next 
 function nextCheck(nextMatch){
    if(!nextMatch){
       if(lastPrinted!=="none"){
